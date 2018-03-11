@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ <mapper namespace="com.attempt.life.mapper.CzRedisMapper" >
+  
+	<select id="addusernameToRedis" 
+  		 resultType="com.attempt.life.po.LoginVo">
+  		SELECT username FROM userlogin 
+  	</select>
+  	
+  		<select id="findusers" parameterType="com.attempt.life.po.LoginVo"
+  		 resultType="integer">
+  		SELECT count(*) FROM userlogin  WHERE username=#{username}
+  		
+  	</select>
+  	</mapper>
